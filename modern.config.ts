@@ -15,5 +15,7 @@ export default defineConfig({
       plugins: [new ArcoWebpackPlugin()],
     },
   },
-  // bff:
+  server: {
+    port: 8000,
+  },
 });

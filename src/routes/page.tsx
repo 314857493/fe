@@ -9,7 +9,7 @@ import { countModel } from '@/store/counter';
 const Index = () => {
   const [counter, actions] = useModel(countModel);
   const { data, loading } = useRequest(() => {
-    return get('type1', { query: { username: '123' } });
+    return get('type1', { query: { username: 'username' } });
   });
   return (
     <div className={style['container-box']}>
@@ -26,7 +26,7 @@ const Index = () => {
         点击
       </Button>
       <div>{counter.value}</div>
-      <Spin loading={loading}>{JSON.stringify(data)}</Spin>
+      <Spin loading={loading}>{data?.username}</Spin>
     </div>
   );
 };
